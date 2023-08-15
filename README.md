@@ -1,0 +1,3 @@
+# automl
+
+![](assets/curves.png)
