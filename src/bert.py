@@ -80,7 +80,7 @@ class Model(LightningModule):
 if __name__ == '__main__':
     seed_everything(42, workers=True)
 
-    npz = np.load('data_text.npz', allow_pickle=True)
+    npz = np.load('data/data_text.npz', allow_pickle=True)
     # lens = list(map(len, npz['x']))
     # pad_len = int(np.percentile(lens, 95.45))
     pad_len = 512

@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-df = pd.read_csv('mtsamples.csv')
+df = pd.read_csv('data/mtsamples.csv')
 df = df.groupby('transcription').first().reset_index()
 df = df[~df['transcription'].isna()]
 df['medical_specialty'] = df['medical_specialty'].map(str.strip)
@@ -14,7 +14,7 @@ df['transcription'] = df['transcription'].map(str.lower)
 labels = sorted(df['medical_specialty'].unique().tolist())
 label_ids = df['medical_specialty'].map(labels.index).tolist()
 
-np.savez('data_text.npz', x=df['transcription'], y=label_ids)
+np.savez('data/data_text.npz', x=df['transcription'], y=label_ids)
 
 counter = Counter(df['medical_specialty'])
 entries = np.array(list(counter.values()))
@@ -40,4 +40,4 @@ for i, transcription in enumerate(tqdm(df['transcription'])):
         if keyword in transcription:
             matrix[i, j] = 1.
 
-np.savez('data_matrix.npz', x=matrix, y=label_ids)
+np.savez('data/data_matrix.npz', x=matrix, y=label_ids)

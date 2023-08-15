@@ -2,8 +2,8 @@ import autokeras as ak
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-# npz = np.load('data_matrix.npz')
-npz = np.load('data_text.npz', allow_pickle=True)
+# npz = np.load('data/data_matrix.npz')
+npz = np.load('data/data_text.npz', allow_pickle=True)
 x_train, x_valid, y_train, y_valid = train_test_split(npz['x'], npz['y'])
 
 # clf = ak.StructuredDataClassifier()  # --for data_matrix, acc: 0.685

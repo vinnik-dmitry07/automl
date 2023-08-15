@@ -73,7 +73,7 @@ class Model(LightningModule):
 if __name__ == '__main__':
     seed_everything(42, workers=True)
 
-    npz = np.load('data_matrix.npz')
+    npz = np.load('data/data_matrix.npz')
     dataset_ = TensorDataset(
         torch.from_numpy(npz['x']),
         torch.from_numpy(npz['y']).long()
