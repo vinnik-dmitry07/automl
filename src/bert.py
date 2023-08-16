@@ -50,7 +50,6 @@ class Model(LightningModule):
         labels_hat = self(ids, mask)
         self.log('val_loss', self.criterion(labels_hat, labels), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_matt', self.matt(labels_hat, labels), on_epoch=True, prog_bar=True, logger=True)
-        self.log('val_f1', self.f1(labels_hat, labels), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_f1_macro', self.f1_macro(labels_hat, labels), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_acc', self.acc(labels_hat, labels), on_epoch=True, prog_bar=True, logger=True)
         # self.logger.experiment.add_pr_curve(

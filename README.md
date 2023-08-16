@@ -13,7 +13,7 @@ sklearn_automl text classifier f1_macro criterion  -- acc: 0.776, f1_macro: 0.45
 Also, I trained a perceptron on the keyword matrix:</br>
 pytorch lightning keyword matrix classifier -- acc: 0.763, f1_macro: 0.463, matthew_corr: 0.699</br>
 and fine-tuned the bert-base-uncased model</br>
-pytorch lightning bert text classifier -- in progress, but I would not expect much.
+pytorch lightning bert text classifier head -- acc: 0.492, f1_macro: 0.134, matthew_corr: 0.311</br>
 
 The perceptron curves:
 

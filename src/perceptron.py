@@ -44,7 +44,6 @@ class Model(LightningModule):
         y_hat = self(x)
         self.log('val_loss', self.criterion(y_hat, y), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_matt', self.matt(y_hat, y), on_epoch=True, prog_bar=True, logger=True)
-        self.log('val_f1', self.f1(y_hat, y), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_f1_macro', self.f1_macro(y_hat, y), on_epoch=True, prog_bar=True, logger=True)
         self.log('val_acc', self.acc(y_hat, y), on_epoch=True, prog_bar=True, logger=True)
         # self.logger.experiment.add_pr_curve('val_pr', y, y_hat[torch.arange(y_hat.size(0)), y], self.global_step)
